@@ -160,16 +160,41 @@
             </objects>
             <point key="canvasLocation" x="2021.5999999999999" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose User View Controller-->
         <scene sceneID="V7O-px-u4p">
             <objects>
-                <viewController id="Rqb-Hz-I0E" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Rqb-Hz-I0E" customClass="ChooseUserViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UMz-wP-Vii">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ehs-1r-lrA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pL4-Dz-Mci">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z7P-tv-vUU">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pwy-ei-eI3" firstAttribute="bottom" secondItem="Ehs-1r-lrA" secondAttribute="bottom" id="NOJ-6D-9uT"/>
+                            <constraint firstItem="Ehs-1r-lrA" firstAttribute="top" secondItem="pwy-ei-eI3" secondAttribute="top" id="S2m-LY-fUg"/>
+                            <constraint firstItem="Ehs-1r-lrA" firstAttribute="leading" secondItem="pwy-ei-eI3" secondAttribute="leading" id="SWH-Yh-2dC"/>
+                            <constraint firstItem="pwy-ei-eI3" firstAttribute="trailing" secondItem="Ehs-1r-lrA" secondAttribute="trailing" id="nPt-A7-02I"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pwy-ei-eI3"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="z7P-tv-vUU" id="moM-Hz-JWQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsS-pG-X8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

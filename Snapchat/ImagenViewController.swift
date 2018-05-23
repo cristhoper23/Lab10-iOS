@@ -38,13 +38,20 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func chooseContactTapped(_ sender: Any) {
-        performSegue(withIdentifier: "chooseContactSegue", sender: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //performSegue(withIdentifier: "chooseContactSegue", sender: nil)
+        chooseContactButton.isEnabled = false
         let imagenesFolder = Storage.storage().reference().child("imagenes")
         let imagenData = UIImagePNGRepresentation(imageView.image!)!
         
+        imagenesFolder.child("\(NSUUID().uuidString).jpg").putData(imagenData, metadata: nil, completion: {(metadata, error) in
+            print("Intentando subir la imagen ...")
+            if error != nil {
+                print("Ocurrió un error:\(String(describing: error))")
+            }
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
 }

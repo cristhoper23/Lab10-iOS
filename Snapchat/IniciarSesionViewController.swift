@@ -30,6 +30,7 @@ class IniciarSesionViewController: UIViewController {
                         print("Tenemos el siguiente error\(String(describing: error))")
                     }else{
                         print("El usuario fue creado exitosamente")
+                        Database.database().reference().child("usuarios").child(user!.user.uid).child("email").setValue(user!.user.email)
                         self.performSegue(withIdentifier: "iniciarSesionSegue", sender: nil)
                     }
                 }
