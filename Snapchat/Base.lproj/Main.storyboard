@@ -80,7 +80,19 @@
                     <view key="view" contentMode="scaleToFill" id="rKu-N8-G8J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fjO-Iv-T5o">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ehq-vA-O5z" firstAttribute="trailing" secondItem="fjO-Iv-T5o" secondAttribute="trailing" id="FBT-G9-XaT"/>
+                            <constraint firstItem="ehq-vA-O5z" firstAttribute="bottom" secondItem="fjO-Iv-T5o" secondAttribute="bottom" id="KOq-Nw-sBD"/>
+                            <constraint firstItem="fjO-Iv-T5o" firstAttribute="top" secondItem="ehq-vA-O5z" secondAttribute="top" id="Tqz-MJ-YBz"/>
+                            <constraint firstItem="fjO-Iv-T5o" firstAttribute="leading" secondItem="ehq-vA-O5z" secondAttribute="leading" id="dMy-WU-Ise"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ehq-vA-O5z"/>
                     </view>
                     <navigationItem key="navigationItem" id="TtK-XJ-pj3">
@@ -95,10 +107,53 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fjO-Iv-T5o" id="vDz-wn-jd8"/>
+                        <segue destination="7Qu-BV-6RR" kind="show" identifier="verSnapSegue" id="7s4-Qe-qLm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9A-Pd-ADt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1201" y="134"/>
+        </scene>
+        <!--Ver Snap View Controller-->
+        <scene sceneID="F5c-xS-aPt">
+            <objects>
+                <viewController id="7Qu-BV-6RR" customClass="VerSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="75K-9c-Fqb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VXk-Ms-AyS">
+                                <rect key="frame" x="20" y="84" width="335" height="283"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xf-fM-TzR">
+                                <rect key="frame" x="160" y="402" width="55" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ynT-fq-ooT" firstAttribute="trailing" secondItem="VXk-Ms-AyS" secondAttribute="trailing" constant="20" id="5ON-cs-w03"/>
+                            <constraint firstItem="VXk-Ms-AyS" firstAttribute="leading" secondItem="ynT-fq-ooT" secondAttribute="leading" constant="20" id="UYo-Sx-bgZ"/>
+                            <constraint firstItem="7xf-fM-TzR" firstAttribute="top" secondItem="VXk-Ms-AyS" secondAttribute="bottom" constant="35" id="cAO-nP-VoU"/>
+                            <constraint firstItem="VXk-Ms-AyS" firstAttribute="centerX" secondItem="75K-9c-Fqb" secondAttribute="centerX" id="iii-Q7-0P1"/>
+                            <constraint firstItem="VXk-Ms-AyS" firstAttribute="top" secondItem="ynT-fq-ooT" secondAttribute="top" constant="20" id="rUR-MO-oUp"/>
+                            <constraint firstItem="7xf-fM-TzR" firstAttribute="centerX" secondItem="75K-9c-Fqb" secondAttribute="centerX" id="s7s-oh-2Yw"/>
+                            <constraint firstItem="ynT-fq-ooT" firstAttribute="bottom" secondItem="VXk-Ms-AyS" secondAttribute="bottom" constant="300" id="xaW-38-0P2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ynT-fq-ooT"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="VXk-Ms-AyS" id="q0n-MS-lGJ"/>
+                        <outlet property="label" destination="7xf-fM-TzR" id="rWJ-or-Jqv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22A-2B-9CG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="884"/>
         </scene>
         <!--Imagen View Controller-->
         <scene sceneID="LTn-Yw-SDE">
